@@ -62,7 +62,10 @@ export function ProductFilters() {
             <AccordionTrigger>
               <span>
                 {section.name}{" "}
-                <span className="ml-1 text-xs font-extrabold uppercase text-gray-400"></span>
+                <span className="ml-1 text-xs font-extrabold uppercase text-gray-400">
+
+                  {searchParams.get(section.id) ? `(${searchParams.get(section.id)})` : ""}
+                </span>
               </span>
             </AccordionTrigger>
             <AccordionContent>
