@@ -48,6 +48,7 @@ export default async function Page({ searchParams }: Props) {
     images,
     currency,
     price,
+    size,
     description,
     "slug":slug.current
  }`)
