@@ -24,12 +24,12 @@ export interface SanityProduct extends Omit<InventoryProduct, "images"> {
 export const inventory: InventoryProduct[] = [
   {
     id: "64da6006-a4bb-4555-af78-3467853eb75e",
-    sku: "canvas_tote_bag_1",
-    name: "Canvas Tote Bag",
-    description: `Meet your new favorite carry-on. Our supersized tote is crafted in durable waxed cotton canvas that's rugged and durable, ideal for hauling all of your stuff. This size takes you to and from the farmer's market, the gym or a weekend getaway.`,
-    price: 16800, // price in smallest currency unit (e.g. cent for USD)
+    sku: "G_trek_bumbag_1",
+    name: "G Trek Bumbag",
+    description: `Nylon travel bumbag. Adjustable strap. Silver-tone hardware. Reflective logo text at front. Zip closure at top.`,
+    price: 65000, // price in smallest currency unit (e.g. cent for EUR)
     image:
-      "https://fullstackdotso.nyc3.cdn.digitaloceanspaces.com/canvas-tote-bag-1.jpg",
+      "https://lh3.googleusercontent.com/d/1ExsJgqwj1t5X1cr1IsOfeWmItuUDEd11",
     images: [
       "https://fullstackdotso.nyc3.cdn.digitaloceanspaces.com/canvas-tote-bag-1.jpg",
       "https://fullstackdotso.nyc3.cdn.digitaloceanspaces.com/canvas-tote-bag-2.jpg",
@@ -37,8 +37,8 @@ export const inventory: InventoryProduct[] = [
     ],
     sizes: ["one-size"],
     categories: ["bags"],
-    colors: ["brown"],
-    currency: "USD",
+    colors: ["black"],
+    currency: "EUR",
   },
   {
     id: "8d1a33a5-5650-4bd7-bb70-ba4670090700",
@@ -56,7 +56,7 @@ export const inventory: InventoryProduct[] = [
     sizes: ["one-size"],
     categories: ["bags"],
     colors: ["blue"],
-    currency: "USD",
+    currency: "EUR",
   },
   {
     id: "e882fe48-253c-40fb-8155-51b47b063c1a",
@@ -65,14 +65,14 @@ export const inventory: InventoryProduct[] = [
     description: `These handsome leather belts are guaranteed to pull together any outfit. They're made of vegetable-tanned Italian leather, which means they have natural highs and lows of color and will look even better over time.`,
     price: 4999,
     image:
-      "https://fullstackdotso.nyc3.cdn.digitaloceanspaces.com/braided-leather-belt.jpg",
+      "https://drive.usercontent.google.com/download?id=1YwuciQgkydbBT4XsU8Imdd-e12n_E9WE",
     images: [
-      "https://fullstackdotso.nyc3.cdn.digitaloceanspaces.com/braided-leather-belt.jpg",
+      "https://drive.usercontent.google.com/download?id=1YwuciQgkydbBT4XsU8Imdd-e12n_E9WE",
     ],
     sizes: ["s", "m", "l", "xl"],
     categories: ["belts"],
     colors: ["brown"],
-    currency: "USD",
+    currency: "EUR",
   },
   {
     id: "6853a582-fc95-44af-9dac-dffbc694b47d",
@@ -88,7 +88,7 @@ export const inventory: InventoryProduct[] = [
     sizes: ["s", "m", "l", "xl"],
     categories: ["belts"],
     colors: ["black"],
-    currency: "USD",
+    currency: "EUR",
   },
   {
     id: "b5980fb9-142b-4e0b-9683-daac07827e0a",
@@ -105,7 +105,7 @@ export const inventory: InventoryProduct[] = [
     sizes: ["one-size"],
     categories: ["scarves"],
     colors: ["green"],
-    currency: "USD",
+    currency: "EUR",
   },
   {
     id: "743b3855-6487-4d52-80fc-bcb8ca4fa74b",
@@ -121,7 +121,7 @@ export const inventory: InventoryProduct[] = [
     sizes: ["s", "m", "l", "xl"],
     categories: ["gloves"],
     colors: ["brown"],
-    currency: "USD",
+    currency: "EUR",
   },
   {
     id: "83ea928a-d834-4c6d-a588-4c93ec2de3c0",
@@ -137,7 +137,7 @@ export const inventory: InventoryProduct[] = [
     sizes: ["s", "m", "l", "xl"],
     categories: ["gloves"],
     colors: ["black"],
-    currency: "USD",
+    currency: "EUR",
   },
   {
     id: "c5ef468d-d49e-4aa5-be5b-41f34af40b19",
@@ -154,7 +154,7 @@ export const inventory: InventoryProduct[] = [
     sizes: ["one-size"],
     categories: ["sunglasses"],
     colors: ["yellow"],
-    currency: "USD",
+    currency: "EUR",
   },
   {
     id: "dd27c79d-97c3-47bb-9172-4ea74b096f6f",
@@ -170,6 +170,6 @@ export const inventory: InventoryProduct[] = [
     sizes: ["one-size"],
     categories: ["sunglasses"],
     colors: ["black"],
-    currency: "USD",
+    currency: "EUR",
   },
 ]
