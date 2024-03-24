@@ -40,7 +40,7 @@ export function ProductGallery({ product }: Props) {
               </span>
               {index === selectedImage && (
                 <span
-                  className="pointer-events-none absolute inset-0 rounded-md ring-4 ring-indigo-500 ring-offset-2"
+                  className="pointer-events-none absolute inset-0 rounded-md ring-4 ring-yellow-500 ring-offset-2"
                   aria-hidden="true"
                 />
               )}

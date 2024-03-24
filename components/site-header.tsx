@@ -2,13 +2,15 @@
 
 import Link from "next/link"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import { Edit, ShoppingBag } from "lucide-react"
+import { Edit, ShoppingBag, User, Heart } from "lucide-react"
 import { useShoppingCart } from "use-shopping-cart"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
+
+import BannerHeader from "./ui/banner-header"
 
 export function SiteHeader() {
   const pathname = usePathname()
@@ -28,6 +30,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
+      <BannerHeader />
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between space-x-4 px-6 sm:space-x-0">
         <MainNav />
         <form
@@ -44,7 +47,19 @@ export function SiteHeader() {
             defaultValue={defaultSearchQuery}
           />
         </form>
-        <div className="flex items-center space-x-1">
+        <div className="flex items-center">
+          
+          <Link href="/">
+            <Button size="sm" variant="ghost">
+              <Heart className="h-5 w-5" />
+            </Button>
+          </Link>
+          <Link href="/">
+            <Button size="sm" variant="ghost">
+              <User className="h-5 w-5" />
+            </Button>
+          </Link>
+          <ThemeToggle />
           <Link href="/cart">
             <Button size="sm" variant="ghost">
               <ShoppingBag className="h-5 w-5" />
@@ -52,14 +67,14 @@ export function SiteHeader() {
               <span className="sr-only">Cart</span>
             </Button>
           </Link>
-          <ThemeToggle />
-          {process.env.NODE_ENV === "development" && (
+          {/* {process.env.NODE_ENV === "development" && (
             <Link href="/studio">
               <Button size="sm" variant="ghost">
                 <Edit className="h-5 w-5" />
               </Button>
             </Link>
-          )}
+            
+          )} */}
         </div>
       </div>
     </header>

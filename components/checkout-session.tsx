@@ -40,7 +40,7 @@ useEffect(()=>{
       </h3>
       <p className="mt-8">
         Check your purchase email{" "}
-        <span className="mx-1 font-extrabold text-indigo-500">{customerDetails.email}</span> for
+        <span className="mx-1 font-extrabold text-yellow-500">{customerDetails.email}</span> for
         your invoice.
       </p>
     </>
