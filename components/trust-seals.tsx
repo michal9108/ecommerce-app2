@@ -21,7 +21,7 @@ const features = [
     name: "30-DAY EASY RETURNS",
     icon: (
       <svg
-        className="w-18 h-10"
+        className="w-18 h-10 "
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512.015 512.015"
         xmlSpace="preserve"
@@ -59,15 +59,15 @@ const features = [
 
 function TrustSeals() {
   return (
-    <div className="mx-auto   bg-white  ">
+    <div className="mx-auto   bg-background ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid  grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-1 md:grid-cols-3  lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
             {features.map((feature) => (
               <div key={feature.name}>
-                <div className=" flex flex-col items-center justify-center gap-3 text-base font-semibold leading-7 text-gray-900">
+                <div className=" flex flex-col items-center justify-center gap-3 text-base font-semibold leading-7 text-foreground">
                   <div className="" aria-hidden="true" />
-                  <div className=" ">{feature.icon}</div>
+                  <div className="fill-foreground">{feature.icon}</div>
                   <h4 className="font-bold"> {feature.name}</h4>
                 </div>
               </div>

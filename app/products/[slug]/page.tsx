@@ -4,6 +4,8 @@ import { groq } from "next-sanity"
 import { SanityProduct } from "@/config/inventory"
 import { ProductGallery } from "@/components/product-gallery"
 import { ProductInfo } from "@/components/product-info"
+import ProductReviews from "@/components/product-reviews"
+import SimiliarProducts from "@/components/product-similiar"
 
 interface Props {
   params: {
@@ -37,6 +39,8 @@ export default async function Page({ params }: Props) {
         <div className="pb-20 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-12">
           <ProductGallery product={product} /> <ProductInfo product={product} />
         </div>
+        <ProductReviews/>
+        <SimiliarProducts/>
       </div>
     </main>
   )
