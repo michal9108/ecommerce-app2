@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { urlForImage } from "@/sanity/lib/image"
 import { Heart } from "lucide-react"
 
 import { InventoryProduct } from "@/config/inventory"

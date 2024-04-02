@@ -3,7 +3,6 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Disclosure } from "@headlessui/react"
-import { Label } from "@sanity/ui"
 import { ArrowRight, Minus, Plus, StarIcon } from "lucide-react"
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart"
 
