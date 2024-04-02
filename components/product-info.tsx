@@ -7,13 +7,13 @@ import { Label } from "@sanity/ui"
 import { ArrowRight, Minus, Plus, StarIcon } from "lucide-react"
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart"
 
-import { SanityProduct } from "@/config/inventory"
+import { InventoryProduct, SanityProduct } from "@/config/inventory"
 import { getSizeName } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { useToast } from "@/components/ui/use-toast"
 
 interface Props {
-  product: SanityProduct
+  product: InventoryProduct
 }
 
 export function ProductInfo({ product }: Props) {
@@ -22,6 +22,7 @@ export function ProductInfo({ product }: Props) {
   const { toast } = useToast()
 
   const isInCart = !!cartDetails?.[product._id]
+  
   function addToCart() {
     const item = {
       ...product,
@@ -71,9 +72,7 @@ export function ProductInfo({ product }: Props) {
               />
             ))}
           </div>
-          <div aria-hidden="true" className="ml-4 text-sm text-gray-300">
-          
-          </div>
+          <div aria-hidden="true" className="ml-4 text-sm text-gray-300"></div>
           <div className="ml-4 flex">
             <a
               href="#"
@@ -117,20 +116,20 @@ export function ProductInfo({ product }: Props) {
           </Button>
         ))}
       </div>
-      
+
       <div className="divide-y divide-gray-200 ">
-      <form className="mt-6">
-        <div className="mt-4 flex">
-          <Button
+        <form className="mt-6">
+          <div className="mt-4 flex">
+            <Button
             onClick={addToCart}
-            type="button"
-            className="w-full bg-yellow-500 py-6 text-lg font-semibold text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          >
-            Add to cart
-          </Button>
-        </div>
-      </form>
-      <Disclosure as="div" key={product.name}>
+              type="button"
+              className="w-full bg-yellow-500 py-6 text-lg font-semibold text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            >
+              Add to cart
+            </Button>
+          </div>
+        </form>
+        <Disclosure as="div" key={product.name}>
           {({ open }) => (
             <>
               <h3>

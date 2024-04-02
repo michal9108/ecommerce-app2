@@ -5,11 +5,11 @@ import Image from "next/image"
 import { urlForImage } from "@/sanity/lib/image"
 import { Heart } from "lucide-react"
 
-import { SanityProduct } from "@/config/inventory"
+import { InventoryProduct } from "@/config/inventory"
 import { shimmer, toBase64 } from "@/lib/image"
 
 interface Props {
-  product: SanityProduct
+  product: InventoryProduct
 }
 
 export function ProductGallery({ product }: Props) {
@@ -22,13 +22,13 @@ export function ProductGallery({ product }: Props) {
         <ul className="grid grid-cols-4 gap-6">
           {product.images.map((image, index) => (
             <div
-              key={image._key as string}
+              key={index}
               onClick={() => setSelectedImage(index)}
               className="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase hover:bg-gray-50"
             >
               <span className="absolute inset-0 overflow-hidden rounded-md">
                 <Image
-                  src={urlForImage(image).url()}
+                  src={image}
                   width={200}
                   height={200}
                   alt=""
@@ -55,7 +55,7 @@ export function ProductGallery({ product }: Props) {
         <div className="aspect-h-1 aspect-w-1 w-full">
           <Image
             priority
-            src={urlForImage(product.images[selectedImage]).url()}
+            src={product.images[selectedImage]}
             alt={`Main ${product.name} image`}
             width={600}
             height={750}

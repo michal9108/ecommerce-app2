@@ -6,14 +6,14 @@ import { urlForImage } from "@/sanity/lib/image"
 import { Heart, XCircle } from "lucide-react"
 import { formatCurrencyString } from "use-shopping-cart"
 
-import { SanityProduct } from "@/config/inventory"
+import { InventoryProduct } from "@/config/inventory"
 import { shimmer, toBase64 } from "@/lib/image"
 import { Button } from "@/components/ui/button"
 
 // import { SanityProductProps } from "@/lib/types"
 
 interface Props {
-  products: SanityProduct[]
+  products: InventoryProduct[]
 }
 
 export function ProductGrid({ products }: Props) {
@@ -45,8 +45,8 @@ export function ProductGrid({ products }: Props) {
                 blurDataURL={`data:image/svg+xml;base64,${toBase64(
                   shimmer(225, 280)
                 )}`}
-                src={urlForImage(product.images[0]).url()}
-                alt={product.name}
+                src={product.images[0]}
+                alt={product.name|| ""}
                 width={225}
                 height={280}
                 className="h-full w-full object-cover object-center"
@@ -55,7 +55,7 @@ export function ProductGrid({ products }: Props) {
             <div className="absolute right-1 top-1 m-2 ">
               <Heart color="#b91c1c" />
             </div>
-            <div className="absolute left-1 bottom-1 m-2 flex items-center justify-center rounded-md bg-black p-1 text-xs font-bold text-white shadow-sm">
+            <div className="absolute bottom-1 left-1 m-2 flex items-center justify-center rounded-md bg-black p-1 text-xs font-bold text-white shadow-sm">
               <h5>20% OFF</h5>
             </div>
           </div>
@@ -67,6 +67,7 @@ export function ProductGrid({ products }: Props) {
                   currency: product.currency,
                   value: product.price,
                 })}
+        
               </p>
               <p className="line-through">€560</p>
             </div>
@@ -75,12 +76,12 @@ export function ProductGrid({ products }: Props) {
             </div>
            
             <div className="absolute right-0 top-6 mt-2 flex items-center justify-center rounded-md   text-xs font-bold text-black ">
-              <p className=" text-foreground font-medium text-sm">⭐️4.2</p>
+              <p className=" text-sm font-medium text-foreground">⭐️4.2</p>
             </div>
           </div>
           <Button
             type="button"
-            className="w-full mt-2 bg-yellow-500 py-6 text-base font-medium text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            className="mt-2 w-full bg-yellow-500 py-6 text-base font-medium text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500"
           >
             BUY NOW
           </Button>

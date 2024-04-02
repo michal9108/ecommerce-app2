@@ -67,14 +67,7 @@ export function SiteHeader() {
               <span className="sr-only">Cart</span>
             </Button>
           </Link>
-          {/* {process.env.NODE_ENV === "development" && (
-            <Link href="/studio">
-              <Button size="sm" variant="ghost">
-                <Edit className="h-5 w-5" />
-              </Button>
-            </Link>
-            
-          )} */}
+         
         </div>
       </div>
     </header>

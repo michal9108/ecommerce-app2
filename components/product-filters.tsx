@@ -87,11 +87,19 @@ export function ProductFilters() {
                       )}
                       onClick={(event) => {
                         const params = new URLSearchParams(searchParams)
+                        console.log("Initial Search Params Entries:", Array.from(params.entries()));
+
+
+
                         const checked =
                           event.currentTarget.dataset.state === "checked"
+                          console.log("Checkbox State:", checked);
+
                         checked
                           ? params.delete(section.id)
                           : params.set(section.id, option.value)
+                          console.log("Updated Search Params Entries:", Array.from(params.entries()));
+
                         router.replace(`/?${params.toString()}`)
                       }}
                     />

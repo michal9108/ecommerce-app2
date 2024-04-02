@@ -1,55 +1,56 @@
-import { client } from "@/sanity/lib/client"
-import { groq } from "next-sanity"
-
-import { SanityProduct } from "@/config/inventory"
-import { siteConfig } from "@/config/site"
-import { seedSanityData } from "@/lib/seed"
-import { cn } from "@/lib/utils"
-import { ProductFilters } from "@/components/product-filters"
-import { ProductGrid } from "@/components/product-grid"
-import { ProductSort } from "@/components/product-sort"
-import { SiteHero } from "@/components/site-hero"
-import TrustSeals from "@/components/trust-seals"
-import Newsletter from "@/components/ui/newsletter"
+import { inventory } from "@/config/inventory"; // Import mock data
+import { cn } from "@/lib/utils";
+import { ProductFilters } from "@/components/product-filters";
+import { ProductGrid } from "@/components/product-grid";
+import { ProductSort } from "@/components/product-sort";
+import { SiteHero } from "@/components/site-hero";
+import TrustSeals from "@/components/trust-seals";
+import Newsletter from "@/components/ui/newsletter";
 
 interface Props {
   searchParams: {
-    date?: string
-    price?: string
-    color?: string
-    category?: string
-    size?: string
-    search?: string
-  }
+    date?: string;
+    price?: string;
+    color?: string;
+    category?: string;
+    size?: string;
+    search?: string;
+  };
 }
 
-export default async function Page({ searchParams }: Props) {
-  //  seedSanityData()
+export default function Page({ searchParams }: Props) {
 
-  const { date = "desc", price, color, category, size, search } = searchParams
-  const priceOrder = price ? `| order(price ${price})` : ""
-  const dateOrder = date ? `| order(_createdAt ${date})` : ""
-  const order = `${priceOrder}${dateOrder}`
+  const { date = 'desc', price, color, category, size, search } = searchParams;
 
-  const productFilter = `_type == "product"`
-  const colorFilter = color ? `&& "${color}" in colors` : ""
-  const categoryFilter = category ? `&& "${category}" in categories` : ""
-  const sizeFilter = size ? `&& "${size}" in sizes` : ""
-  const searchFilter = search ? `&& name match  " ${search}"` : ""
-  const filter = `*[${productFilter}${colorFilter}${categoryFilter}${sizeFilter}${searchFilter}]`
+  let products = [...inventory];
 
-  const products = await client.fetch<SanityProduct[]>(groq`${filter} ${order} {
-    _id,
-    _createdAt,
-    name,
-    sku,
-    images,
-    currency,
-    price,
-    size,
-    description,
-    "slug":slug.current
- }`)
+  if (color) {
+    products = products.filter(product => product.colors.includes(color));
+  }
+  if (category) {
+    products = products.filter(product => product.categories.includes(category));
+  }
+  if (size) {
+    products = products.filter(product => product.sizes.includes(size));
+  }
+  if (search) {
+    const searchRegex = new RegExp(search, 'i');
+    products = products.filter(product => searchRegex.test(product.name));
+  }
+
+  if (price && (price === 'asc' || price === 'desc')) {
+    products.sort((a, b) => {
+      return price === 'asc' ? a.price - b.price : b.price - a.price;
+    });
+  }
+
+  if (date && (date === 'asc' || date === 'desc')) {
+    products.sort((a, b) => {
+      const dateA = new Date(a._createdAt).getTime();
+      const dateB = new Date(b._createdAt).getTime();
+      return date === 'asc' ? dateA - dateB : dateB - dateA;
+    });
+  }
 
   return (
     <div>
