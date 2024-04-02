@@ -1,28 +1,5 @@
-import { Image } from "sanity"
+import { InventoryProduct } from "@/lib/types"
 
-export interface InventoryProduct {
-  _id: string
-  id: string
-  name: string
-  image: string
-  images: string[]
-  categories: string[]
-  sizes: string[]
-  colors: string[]
-  price: number
-  currency: string
-  description: string
-  slug: string
-  sku: string
-  _createdAt: Date
-}
-
-export interface SanityProduct extends Omit<InventoryProduct, "images"> {
-  _id: string
-  _createdAt: Date
-  slug: string
-  images: Image[]
-}
 
 export const inventory: InventoryProduct[] = [
   {
@@ -275,3 +252,4 @@ export const inventory: InventoryProduct[] = [
     currency: "EUR",
   },
 ]
+

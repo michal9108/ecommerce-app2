@@ -5,11 +5,10 @@ import Link from "next/link"
 import { Heart, XCircle } from "lucide-react"
 import { formatCurrencyString } from "use-shopping-cart"
 
-import { InventoryProduct } from "@/config/inventory"
+import { InventoryProduct } from "../lib/types"
 import { shimmer, toBase64 } from "@/lib/image"
 import { Button } from "@/components/ui/button"
 
-// import { SanityProductProps } from "@/lib/types"
 
 interface Props {
   products: InventoryProduct[]

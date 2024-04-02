@@ -4,7 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { Heart } from "lucide-react"
 
-import { InventoryProduct } from "@/config/inventory"
+import { InventoryProduct } from "../lib/types"
 import { shimmer, toBase64 } from "@/lib/image"
 
 interface Props {

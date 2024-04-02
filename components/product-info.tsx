@@ -6,7 +6,7 @@ import { Disclosure } from "@headlessui/react"
 import { ArrowRight, Minus, Plus, StarIcon } from "lucide-react"
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart"
 
-import { InventoryProduct, SanityProduct } from "@/config/inventory"
+import { InventoryProduct } from "../lib/types"
 import { getSizeName } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { useToast } from "@/components/ui/use-toast"
