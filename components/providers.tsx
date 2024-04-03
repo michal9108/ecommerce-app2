@@ -1,17 +1,20 @@
 "use client"
 
 import { CartProvider } from "use-shopping-cart"
-
+import { SessionProvider } from "next-auth/react"
 import { Toaster } from "@/components/ui/toaster"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 
 interface Props {
   children: React.ReactNode
+  
 }
 
 export function Providers({ children }: Props) {
   return (
+   
+
     <CartProvider
       currency="EUR"
       shouldPersist
@@ -24,5 +27,7 @@ export function Providers({ children }: Props) {
         <TailwindIndicator />
       </ThemeProvider>
     </CartProvider>
+  
+
   )
 }

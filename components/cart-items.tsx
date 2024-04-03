@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+
 import { Clock, X } from "lucide-react"
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart"
 import { Product } from "use-shopping-cart/core"

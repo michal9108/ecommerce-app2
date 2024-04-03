@@ -15,3 +15,11 @@ export interface InventoryProduct {
     _createdAt: Date
   }
   
+
+  export interface InventoryProducts {
+    products: InventoryProduct[]
+  }
+
+  export interface ProductCard {
+    product: InventoryProduct
+  }

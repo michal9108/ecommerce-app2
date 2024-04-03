@@ -7,8 +7,7 @@ import {
   type Icon as LucideIcon,
 } from "lucide-react"
 
-import Logo from "../app/assets/Logo.svg"
-
+import Logo from "../app/assets/Logo.44b83c01.svg"
 export type Icon = LucideIcon
 
 export const Icons = {

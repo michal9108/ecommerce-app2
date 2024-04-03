@@ -3,15 +3,30 @@ import { ProductGallery } from "@/components/product-gallery";
 import { ProductInfo } from "@/components/product-info";
 import ProductReviews from "@/components/product-reviews";
 import SimiliarProducts from "@/components/product-similiar";
+import TrendingList from "@/components/product-trending";
 
 interface Props {
   params: {
     slug: string;
+    categories: string[];
   };
 }
 
 export default function Page({ params }: Props) {
   const product = inventory.find((item) => item.slug === params.slug);
+
+  const suggestedProducts = inventory.filter((item) => {
+    console.log("Params Categories:", params.categories);
+    console.log("Item Categories:", item.categories);
+    console.log("Params:", params);
+
+    // Check if any category in item is also in params.categories
+    return item.categories && Array.isArray(item.categories) &&
+           params.categories && Array.isArray(params.categories) &&
+           item.categories.some(category => params.categories.includes(category));
+  });
+
+  console.log("suggestedProducts:", suggestedProducts);
 
   if (!product) {
     return <div>Product not found</div>;
@@ -25,7 +40,9 @@ export default function Page({ params }: Props) {
           <ProductGallery product={product} /> <ProductInfo product={product} />
         </div>
         <ProductReviews />
-        <SimiliarProducts />
+        <TrendingList title="Related Items" items={suggestedProducts} />
+
+        
       </div>
     </main>
   );
