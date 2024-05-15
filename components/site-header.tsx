@@ -52,12 +52,14 @@ export function SiteHeader() {
               defaultValue={defaultSearchQuery}
             />
           </form>
-          <Link href="/">
+          <Link href="accessories">
             <Button size="sm" variant="ghost">
               <Heart className="h-5 w-5" />
             </Button>
           </Link>
-          <Link href="/">
+          <Link 
+          href="accessories"
+          >
             <Button size="sm" variant="ghost">
               <User className="h-5 w-5" />
             </Button>
