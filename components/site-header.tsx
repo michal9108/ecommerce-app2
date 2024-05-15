@@ -36,16 +36,7 @@ export function SiteHeader() {
       <BannerHeader />
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between space-x-2 px-6 sm:space-x-0">
         <MainNav />
-        <Link href="clothes">
-          <Button size="xs" variant="ghost">
-            C
-          </Button>
-        </Link>
-        <Link href="accessories">
-          <Button size="xs" variant="ghost">
-            A
-          </Button>
-        </Link>
+       
         <div className="flex items-center">
           <form
             onSubmit={onSubmit}
