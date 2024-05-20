@@ -5,7 +5,7 @@ import Image from "next/image"
 import useIsAboveMd from "./use-isAboveMd"
 import clothesheromobile from "../../app/assets/clothes-hero-mobile.webp"
 import clotheshero from "../../app/assets/clotheshero.webp"
-import   StarIcon from "lucide-react"
+import  { StarIcon }  from "lucide-react"
 
 export function Hero() {
  
