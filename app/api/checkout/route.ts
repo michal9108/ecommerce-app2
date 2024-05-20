@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     },
     shipping_options: [
         {
-            shipping_rate:"shr_1OwuFzH9dKBRlDkrI41xtTWk"
+            shipping_rate:"shr_1Ox83EH9dKBRlDkrP0bFdR9Q"
         }
     ],
     billing_address_collection:"auto",

@@ -12,7 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 const filters = [
   {
-    id: "category",
+    id: "category", 
     name: "Category",
     options: [
       { value: "bags", label: "Bags" },
@@ -20,6 +20,8 @@ const filters = [
       { value: "gloves", label: "Gloves" },
       { value: "scarves", label: "Scarves" },
       { value: "wallets", label: "Wallets" },
+      { value: "sunglasses", label: "Sunglasses" },
+      { value: "neklaces", label: "Neklaces" },
     ],
   },
   {
@@ -43,6 +45,7 @@ const filters = [
       { value: "brown", label: "Brown" },
       { value: "green", label: "Green" },
       { value: "yellow", label: "Yellow" },
+      { value: "gold", label: "Gold" },
     ],
   },
 ]
@@ -63,8 +66,9 @@ export function ProductFilters() {
               <span>
                 {section.name}{" "}
                 <span className="ml-1 text-xs font-extrabold uppercase text-gray-400">
-
-                  {searchParams.get(section.id) ? `(${searchParams.get(section.id)})` : ""}
+                  {searchParams.get(section.id)
+                    ? `(${searchParams.get(section.id)})`
+                    : ""}
                 </span>
               </span>
             </AccordionTrigger>
@@ -83,11 +87,19 @@ export function ProductFilters() {
                       )}
                       onClick={(event) => {
                         const params = new URLSearchParams(searchParams)
+                        console.log("Initial Search Params Entries:", Array.from(params.entries()));
+
+
+
                         const checked =
                           event.currentTarget.dataset.state === "checked"
+                          console.log("Checkbox State:", checked);
+
                         checked
                           ? params.delete(section.id)
                           : params.set(section.id, option.value)
+                          console.log("Updated Search Params Entries:", Array.from(params.entries()));
+
                         router.replace(`/?${params.toString()}`)
                       }}
                     />

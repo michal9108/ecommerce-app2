@@ -1,6 +1,25 @@
-import { SanityProduct } from "@/config/inventory";
+export interface InventoryProduct {
+    _id: string
+    id: string
+    name: string
+    image: string
+    images: string[]
+    categories: string[]
+    sizes: string[]
+    colors: string[]
+    price: number
+    currency: string
+    description: string
+    slug: string
+    sku: string
+    _createdAt: Date
+  }
+  
 
-export interface SanityProductProps {
-    products:SanityProduct[]
-}
+  export interface InventoryProducts {
+    products: InventoryProduct[]
+  }
 
+  export interface ProductCard {
+    product: InventoryProduct
+  }

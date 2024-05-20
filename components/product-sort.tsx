@@ -26,7 +26,6 @@ const sortOptions = [
   { name: "Price, high to low", value: "/?price=desc" },
 ]
 
-
 export function ProductSort() {
   const router = useRouter()
 
@@ -37,7 +36,7 @@ export function ProductSort() {
           <SelectValue placeholder="Sort By" />
         </SelectTrigger>
         <SelectContent>
-          {sortOptions.map(option => (
+          {sortOptions.map((option) => (
             <SelectItem key={option.name} value={option.value}>
               {option.name}
             </SelectItem>
