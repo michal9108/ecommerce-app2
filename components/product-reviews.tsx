@@ -98,7 +98,7 @@ export default function ProductReviews() {
   
             <Tab.Group
       as="div"
-      className="lg:w-4/6 md:w-4/6 sm:w-4/6 xs:w-4/6 xxs:w-5/6 m-auto "
+      className="xs:w-4/6 xxs:w-5/6 m-auto sm:w-4/6 md:w-4/6 lg:w-4/6 "
     >
       <Tab.Panels as={Fragment}>
         <Tab.Panel className="-mb-13">
@@ -157,7 +157,7 @@ export default function ProductReviews() {
                           <div className="h-3 rounded-full border border-gray-200 bg-gray-200" />
                           {count.count > 0 ? (
                             <div
-                              className="absolute inset-y-0 rounded-full border border-black-900 bg-black-900"
+                              className="border-black-900 bg-black-900 absolute inset-y-0 rounded-full border"
                               style={{
                                 width: `calc(${count.count} / ${ReviewsArray.totalCount} * 100%)`,
                               }}
@@ -195,11 +195,11 @@ export default function ProductReviews() {
           {ReviewsArray.featured.map((review, reviewIdx) => (
             <div
               key={review.id}
-              className="flex  flex-col text-sm text-gray-500 items-start"
+              className="flex  flex-col items-start text-sm text-gray-500"
             >
               <span className="flex">
                 {/* AVATAR */}
-                <div className="flex-none  pt-3 px-1 relative">
+                <div className="relative  flex-none px-1 pt-3">
                   <Image
                     src={UserImage}
                     alt=""
@@ -210,7 +210,7 @@ export default function ProductReviews() {
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     color="green"
-                    className="w-6 h-6 absolute top-11 right-0 "
+                    className="absolute right-0 top-11 h-6 w-6 "
                   >
                     <path
                       fillRule="evenodd"
@@ -226,13 +226,13 @@ export default function ProductReviews() {
                   )}
                 >
                   <section className="w-full">
-                  <span className="font-medium text-base text-gray-900 ">
+                  <span className="text-base font-medium text-gray-900 ">
                     {review.author}
                   </span>
-                  <strong className="text-green-700 font-normal text-sm mx-1">
+                  <strong className="mx-1 text-sm font-normal text-green-700">
                     Verified Buyer
                   </strong>
-                 <span className="float-right mr-1 font-medium text-sm text-center">{review.datetime}</span>
+                 <span className="float-right mr-1 text-center text-sm font-medium">{review.datetime}</span>
 
                   </section>
                   <span className="flex">
@@ -259,7 +259,7 @@ export default function ProductReviews() {
                         d="m0 0 18 11h65 65 65 65 66L51 39h65 65 65 65L18 66h65 65 65 65 66L51 94h65 65 65 65L18 121h65 65 65 65 66L51 149h65 65 65 65L18 177h65 65 65 65 66L51 205h65 65 65 65L18 232h65 65 65 65 66z"
                       />
                     </svg>
-                    <div className="text-gray-400 font-normal text-sm mx-1">
+                    <div className="mx-1 text-sm font-normal text-gray-400">
                       USA
                     </div>
                   </span>
@@ -283,14 +283,14 @@ export default function ProductReviews() {
                       aria-hidden="true"
                     />
                   ))}
-                  <strong className="font-bold text-sm text-black-900">
+                  <strong className="text-black-900 text-sm font-bold">
                     {review.title}
                   </strong>
                 </div>
 
                 {/* TEXT CONTENT  */}
                 <div
-                  className="prose prose-sm mt-1 max-w-none text-black-900"
+                  className="prose prose-sm text-black-900 mt-1 max-w-none"
                   dangerouslySetInnerHTML={{ __html: review.content }}
                 />
               </span>

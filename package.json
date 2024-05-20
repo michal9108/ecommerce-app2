@@ -14,6 +14,9 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@headlessui/react": "^1.7.19",
     "@next/eslint-plugin-next": "^14.1.4",
     "@radix-ui/react-accordion": "1.1.1",
@@ -29,6 +32,7 @@
     "clsx": "^1.2.1",
     "cmdk": "0.2.0",
     "dotenv": "^16.4.5",
+    "framer-motion": "^11.2.4",
     "lucide-react": "^0.105.0",
     "next": "13.4.4",
     "next-auth": "^4.24.7",
