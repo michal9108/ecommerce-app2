@@ -5,6 +5,7 @@ import Image from "next/image"
 import useIsAboveMd from "./use-isAboveMd"
 import clothesheromobile from "../../app/assets/clothes-hero-mobile.webp"
 import clotheshero from "../../app/assets/clotheshero.webp"
+import   StarIcon from "lucide-react"
 
 export function Hero() {
  
@@ -46,7 +47,6 @@ export function Hero() {
           ) : (
             <Image src={clothesheromobile} fill objectFit="cover" alt="" />
           )}
-          <div style={{ ...gradientLayer }}></div>
         </div>
 
         <div className="relative   max-w-2xl py-32 sm:py-48 lg:py-56 2xl:mx-auto">
