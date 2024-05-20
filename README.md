@@ -3,7 +3,7 @@
 <a href="https://ecommerce-app2.vercel.app/" target="blank"> <img src="https://michalsedivka.eu/img/accessories-hero.png" width="100%" height="100%"/>
 </a>
 ## Link
-[Supplements App](https://ecommerce-app2.vercel.app/)
+[Full-Stack E-commerce App](https://ecommerce-app2.vercel.app/)
 
 
 
